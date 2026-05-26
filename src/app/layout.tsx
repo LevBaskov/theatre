@@ -1,6 +1,5 @@
 
 import { Playfair_Display } from "next/font/google";
-import { metadata } from "./utils/meta";
 import "./globals.css";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
