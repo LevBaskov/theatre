@@ -1,0 +1,134 @@
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fcf8f3 0%, #e8d8c5 100%);
+  color: #3e2723;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #6d4c41;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header__title {
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.header__nav_link,
+.header__nav_link_active {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.header__nav_link_active {
+  background: rgba(255,255,255,0.3);
+  font-weight: 700;
+}
+
+.main {
+  flex: 1;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.profileCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(62, 39, 35, 0.1);
+  border: 1px solid #e0d3c4;
+  text-align: center;
+}
+
+.profileTitle {
+  font-size: 24px;
+  color: #4e342e;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #a1887f;
+  padding-bottom: 15px;
+}
+
+.userInfo {
+  text-align: left;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f5ebe0;
+  border-radius: 8px;
+}
+
+.userInfo p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #4e342e;
+}
+
+.btnLogout {
+  background: linear-gradient(135deg, #c62828 0%, #d32f2f 100%);
+  color: #fff;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(198, 40, 40, 0.2);
+}
+
+.btnLogout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(198, 40, 40, 0.3);
+}
+
+.footer {
+  background-color: #4e342e;
+  padding: 20px;
+  margin-top: auto;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer_link {
+  color: #d7ccc8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer_social {
+  background: #8d6e63;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}

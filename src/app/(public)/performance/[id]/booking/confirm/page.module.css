@@ -1,0 +1,251 @@
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === CONFIRM CARD === */
+.confirmCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(62, 39, 35, 0.1);
+  border: 1px solid #e0d3c4;
+}
+
+.cardTitle {
+  font-size: 28px;
+  color: #4e342e;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 2px solid #a1887f;
+  padding-bottom: 15px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* === INPUTS === */
+.userData {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6d4c41;
+  margin-bottom: 8px;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #d7ccc8;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #fdfbf7;
+  color: #3e2723;
+  transition: border-color 0.2s;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #795548;
+  background: #fff;
+}
+
+/* === TICKET PREVIEW === */
+.previewTitle {
+  font-size: 18px;
+  color: #5d4037;
+  margin-bottom: 15px;
+}
+
+.ticketMockup {
+  background: #fff;
+  border: 2px dashed #bcaaa4;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #fff 0%, #fcf8f3 100%);
+}
+
+/* .ticketMockup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: 2px;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, transparent, transparent 8px, #e0d3c4 8px, #e0d3c4 16px);
+} */
+
+.ticketHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0d3c4;
+}
+
+.ticketTheater {
+  font-weight: 700;
+  color: #4e342e;
+}
+
+.ticketStatus {
+  font-size: 12px;
+  color: #8d6e63;
+  background: #f5ebe0;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.ticketShow {
+  font-size: 20px;
+  color: #3e2723;
+  margin-bottom: 10px;
+}
+
+.ticketInfo p {
+  margin: 6px 0;
+  color: #6d4c41;
+  font-size: 14px;
+}
+
+.ticketSeats {
+  margin-top: 15px;
+  font-weight: 700;
+  color: #d84315;
+  font-size: 16px;
+}
+
+.ticketFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0d3c4;
+}
+
+.ticketPrice {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3e2723;
+}
+
+.qrCode {
+  width: 60px;
+  height: 60px;
+  background: #3e2723;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrPattern {
+  width: 50px;
+  height: 50px;
+  background: 
+    linear-gradient(45deg, transparent 40%, #fff 40%, #fff 60%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, #fff 40%, #fff 60%, transparent 60%);
+  opacity: 0.8;
+}
+
+/* === BUTTON === */
+.btnConfirm {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #4e342e 0%, #6d4c41 100%);
+  color: #fff;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.2);
+}
+
+.btnConfirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(62, 39, 35, 0.3);
+}
+
+/* === SUCCESS STATE === */
+.successCard {
+  background: #fff;
+  padding: 60px 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border: 1px solid #e0d3c4;
+}
+
+.successIcon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.successTitle {
+  font-size: 28px;
+  color: #4e342e;
+  margin-bottom: 15px;
+}
+
+.successText {
+  font-size: 16px;
+  color: #6d4c41;
+  margin-bottom: 30px;
+}
+
+.backLink {
+  display: inline-block;
+  color: #6d4c41;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #f5ebe0;
+  transition: background 0.2s;
+}
+
+.backLink:hover {
+  background: #e8d8c5;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ticketMockup::before {
+    display: none;
+  }
+  
+  .main {
+    padding: 20px 15px;
+  }
+  
+  .confirmCard {
+    padding: 25px;
+  }
+}

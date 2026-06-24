@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
-
+  module.exports = {
+    serverExternalPackages: ['@prisma/client'],
+  };
 const nextConfig: NextConfig = {
-  experimental: {
-    // Для Prisma: исключаем из bundling
-    serverComponentsExternalPackages: ['@prisma/client'],
-  },
+  // Пока оставляем пустым или добавляем только базовые настройки, если нужны
 };
 
 export default nextConfig;

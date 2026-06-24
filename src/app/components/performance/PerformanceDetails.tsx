@@ -1,6 +1,6 @@
 // src/components/performance/PerformanceDetails.tsx
 import styles from "./PerformanceDetails.module.css";
-
+import Link from "next/link";
 interface PerformanceProps {
   title: string;
   genre: string;
@@ -52,12 +52,7 @@ export default function PerformanceDetails({
         </div>
       </div>
 
-      {/* Кнопка бронирования */}
-      <div className={styles.actionFooter}>
-        <a href={`/performance/${Math.random()}/booking`} className={styles.bookBtn}>
-          Выбрать места
-        </a>
-      </div>
+      
     </div>
   );
 }

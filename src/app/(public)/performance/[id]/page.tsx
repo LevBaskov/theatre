@@ -1,6 +1,7 @@
-import PerformanceDetails from "@/components/performance/PerformanceDetails";
+import PerformanceDetails from "@/app/components/performance/PerformanceDetails";
+import styles from "@/app/components/performance/PerformanceDetails.module.css";
 import { notFound } from "next/navigation";
-
+import Link from "next/link";
 // Моковые данные (в будущем заменим на запрос к Prisma)
 const performancesData: Record<string, {
   title: string;
@@ -57,6 +58,12 @@ export default async function PerformancePage({
         Информация о спектакле
       </h2>
       <PerformanceDetails {...performance} />
+      {/* Кнопка бронирования */}
+      <div className={styles.actionFooter}>
+        <Link href={`/performance/${id}/booking`} className={styles.bookBtn}>
+            Выбрать места
+        </Link>
+      </div>
     </div>
   );
 }

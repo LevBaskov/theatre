@@ -21,8 +21,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@prisma/client": ["./prisma/prisma"],
-      "@/*": ["./src/app/*"]
+      "@/*": ["./src/*"]
     },
     "ignoreDeprecations": "6.0"
   },

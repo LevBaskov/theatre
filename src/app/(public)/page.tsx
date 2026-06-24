@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import AfishaSearch from "@/components/afisha/AfishaSearch";
-import PerformanceCard from "@/components/afisha/PerformanceCard";
+import AfishaSearch from "@/app/components/afisha/AfishaSearch";
+import PerformanceCard from "@/app/components/afisha/PerformanceCard";
 
 // Моковые данные с ID
 const allPerformances = [

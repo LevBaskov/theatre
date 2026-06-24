@@ -14,6 +14,8 @@
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   border: 1px solid var(--border-color);
+  max-width: 970px;
+  margin: 0 auto;
   height: 100%; /* Чтобы все карточки были одинаковой высоты */
 }
 
