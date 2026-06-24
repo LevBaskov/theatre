@@ -8,4 +8,16 @@
  *
  * 🟢 You can import this file directly.
  */
+export type * from './models/actor'
+export type * from './models/actors_hero'
+export type * from './models/comm'
+export type * from './models/hall'
+export type * from './models/hero'
+export type * from './models/performance'
+export type * from './models/regisseur'
+export type * from './models/seance'
+export type * from './models/seat'
+export type * from './models/seat_by_ticket'
+export type * from './models/ticket'
+export type * from './models/viewer'
 export type * from './commonInputTypes'

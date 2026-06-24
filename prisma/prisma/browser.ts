@@ -17,4 +17,63 @@ import * as Prisma from './internal/prismaNamespaceBrowser'
 export { Prisma }
 export * as $Enums from './enums'
 export * from './enums';
-
+/**
+ * Model actor
+ * 
+ */
+export type actor = Prisma.actorModel
+/**
+ * Model actors_hero
+ * 
+ */
+export type actors_hero = Prisma.actors_heroModel
+/**
+ * Model comm
+ * 
+ */
+export type comm = Prisma.commModel
+/**
+ * Model hall
+ * 
+ */
+export type hall = Prisma.hallModel
+/**
+ * Model hero
+ * 
+ */
+export type hero = Prisma.heroModel
+/**
+ * Model performance
+ * 
+ */
+export type performance = Prisma.performanceModel
+/**
+ * Model regisseur
+ * 
+ */
+export type regisseur = Prisma.regisseurModel
+/**
+ * Model seance
+ * 
+ */
+export type seance = Prisma.seanceModel
+/**
+ * Model seat
+ * 
+ */
+export type seat = Prisma.seatModel
+/**
+ * Model seat_by_ticket
+ * 
+ */
+export type seat_by_ticket = Prisma.seat_by_ticketModel
+/**
+ * Model ticket
+ * 
+ */
+export type ticket = Prisma.ticketModel
+/**
+ * Model viewer
+ * 
+ */
+export type viewer = Prisma.viewerModel

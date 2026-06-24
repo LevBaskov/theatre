@@ -49,7 +49,18 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 
 export const ModelName = {
-
+  actor: 'actor',
+  actors_hero: 'actors_hero',
+  comm: 'comm',
+  hall: 'hall',
+  hero: 'hero',
+  performance: 'performance',
+  regisseur: 'regisseur',
+  seance: 'seance',
+  seat: 'seat',
+  seat_by_ticket: 'seat_by_ticket',
+  ticket: 'ticket',
+  viewer: 'viewer'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -66,4 +77,195 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const ActorScalarFieldEnum = {
+  ID_actor: 'ID_actor',
+  actor_full_name: 'actor_full_name',
+  actor_text: 'actor_text'
+} as const
+
+export type ActorScalarFieldEnum = (typeof ActorScalarFieldEnum)[keyof typeof ActorScalarFieldEnum]
+
+
+export const Actors_heroScalarFieldEnum = {
+  ID_actor: 'ID_actor',
+  ID_hero: 'ID_hero',
+  is_playing: 'is_playing'
+} as const
+
+export type Actors_heroScalarFieldEnum = (typeof Actors_heroScalarFieldEnum)[keyof typeof Actors_heroScalarFieldEnum]
+
+
+export const CommScalarFieldEnum = {
+  ID_comm: 'ID_comm',
+  ID_seance: 'ID_seance',
+  ID_viewer: 'ID_viewer',
+  comm_text: 'comm_text'
+} as const
+
+export type CommScalarFieldEnum = (typeof CommScalarFieldEnum)[keyof typeof CommScalarFieldEnum]
+
+
+export const HallScalarFieldEnum = {
+  ID_hall: 'ID_hall',
+  hall_type_of: 'hall_type_of',
+  hall_address: 'hall_address',
+  hall_additional_seats: 'hall_additional_seats'
+} as const
+
+export type HallScalarFieldEnum = (typeof HallScalarFieldEnum)[keyof typeof HallScalarFieldEnum]
+
+
+export const HeroScalarFieldEnum = {
+  ID_hero: 'ID_hero',
+  ID_performance: 'ID_performance',
+  hero_description: 'hero_description',
+  hero_name: 'hero_name'
+} as const
+
+export type HeroScalarFieldEnum = (typeof HeroScalarFieldEnum)[keyof typeof HeroScalarFieldEnum]
+
+
+export const PerformanceScalarFieldEnum = {
+  ID_performance: 'ID_performance',
+  ID_regisseur: 'ID_regisseur',
+  performance_name: 'performance_name',
+  performance_annotation: 'performance_annotation',
+  performance_type_of: 'performance_type_of'
+} as const
+
+export type PerformanceScalarFieldEnum = (typeof PerformanceScalarFieldEnum)[keyof typeof PerformanceScalarFieldEnum]
+
+
+export const RegisseurScalarFieldEnum = {
+  ID_regisseur: 'ID_regisseur',
+  regisseur_full_name: 'regisseur_full_name',
+  regisseur_text: 'regisseur_text'
+} as const
+
+export type RegisseurScalarFieldEnum = (typeof RegisseurScalarFieldEnum)[keyof typeof RegisseurScalarFieldEnum]
+
+
+export const SeanceScalarFieldEnum = {
+  ID_seance: 'ID_seance',
+  ID_performance: 'ID_performance',
+  seance_time: 'seance_time',
+  seance_date: 'seance_date',
+  ID_hall: 'ID_hall'
+} as const
+
+export type SeanceScalarFieldEnum = (typeof SeanceScalarFieldEnum)[keyof typeof SeanceScalarFieldEnum]
+
+
+export const SeatScalarFieldEnum = {
+  ID_key_seat: 'ID_key_seat',
+  ID_seat: 'ID_seat',
+  seat_status_of: 'seat_status_of',
+  ID_hall: 'ID_hall',
+  ID_row: 'ID_row',
+  ID_sector: 'ID_sector'
+} as const
+
+export type SeatScalarFieldEnum = (typeof SeatScalarFieldEnum)[keyof typeof SeatScalarFieldEnum]
+
+
+export const Seat_by_ticketScalarFieldEnum = {
+  ID_ticket: 'ID_ticket',
+  ID_key_seat: 'ID_key_seat'
+} as const
+
+export type Seat_by_ticketScalarFieldEnum = (typeof Seat_by_ticketScalarFieldEnum)[keyof typeof Seat_by_ticketScalarFieldEnum]
+
+
+export const TicketScalarFieldEnum = {
+  ID_seance: 'ID_seance',
+  ID_viewer: 'ID_viewer',
+  ID_ticket: 'ID_ticket'
+} as const
+
+export type TicketScalarFieldEnum = (typeof TicketScalarFieldEnum)[keyof typeof TicketScalarFieldEnum]
+
+
+export const ViewerScalarFieldEnum = {
+  ID_viewer: 'ID_viewer',
+  viewer_login: 'viewer_login',
+  viewer_password: 'viewer_password',
+  viewer_email: 'viewer_email',
+  viewer_full_name: 'viewer_full_name'
+} as const
+
+export type ViewerScalarFieldEnum = (typeof ViewerScalarFieldEnum)[keyof typeof ViewerScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const actorOrderByRelevanceFieldEnum = {
+  actor_full_name: 'actor_full_name',
+  actor_text: 'actor_text'
+} as const
+
+export type actorOrderByRelevanceFieldEnum = (typeof actorOrderByRelevanceFieldEnum)[keyof typeof actorOrderByRelevanceFieldEnum]
+
+
+export const commOrderByRelevanceFieldEnum = {
+  comm_text: 'comm_text'
+} as const
+
+export type commOrderByRelevanceFieldEnum = (typeof commOrderByRelevanceFieldEnum)[keyof typeof commOrderByRelevanceFieldEnum]
+
+
+export const hallOrderByRelevanceFieldEnum = {
+  hall_address: 'hall_address'
+} as const
+
+export type hallOrderByRelevanceFieldEnum = (typeof hallOrderByRelevanceFieldEnum)[keyof typeof hallOrderByRelevanceFieldEnum]
+
+
+export const heroOrderByRelevanceFieldEnum = {
+  hero_description: 'hero_description',
+  hero_name: 'hero_name'
+} as const
+
+export type heroOrderByRelevanceFieldEnum = (typeof heroOrderByRelevanceFieldEnum)[keyof typeof heroOrderByRelevanceFieldEnum]
+
+
+export const performanceOrderByRelevanceFieldEnum = {
+  performance_name: 'performance_name',
+  performance_annotation: 'performance_annotation'
+} as const
+
+export type performanceOrderByRelevanceFieldEnum = (typeof performanceOrderByRelevanceFieldEnum)[keyof typeof performanceOrderByRelevanceFieldEnum]
+
+
+export const regisseurOrderByRelevanceFieldEnum = {
+  regisseur_full_name: 'regisseur_full_name',
+  regisseur_text: 'regisseur_text'
+} as const
+
+export type regisseurOrderByRelevanceFieldEnum = (typeof regisseurOrderByRelevanceFieldEnum)[keyof typeof regisseurOrderByRelevanceFieldEnum]
+
+
+export const viewerOrderByRelevanceFieldEnum = {
+  viewer_login: 'viewer_login',
+  viewer_password: 'viewer_password',
+  viewer_email: 'viewer_email',
+  viewer_full_name: 'viewer_full_name'
+} as const
+
+export type viewerOrderByRelevanceFieldEnum = (typeof viewerOrderByRelevanceFieldEnum)[keyof typeof viewerOrderByRelevanceFieldEnum]
 

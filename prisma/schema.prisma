@@ -7,3 +7,133 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model actor {
+  ID_actor        Int           @id @db.SmallInt
+  actor_full_name String?       @db.VarChar(20)
+  actor_text      String?       @db.Text
+  actors_hero     actors_hero[]
+}
+
+model actors_hero {
+  ID_actor   Int      @db.SmallInt
+  ID_hero    Int      @db.SmallInt
+  is_playing Boolean?
+  actor      actor    @relation(fields: [ID_actor], references: [ID_actor], onDelete: NoAction, onUpdate: NoAction, map: "actors_hero_ibfk_1")
+  hero       hero     @relation(fields: [ID_hero], references: [ID_hero], onDelete: NoAction, onUpdate: NoAction, map: "actors_hero_ibfk_2")
+
+  @@id([ID_actor, ID_hero])
+  @@index([ID_hero], map: "R_22")
+}
+
+model comm {
+  ID_comm   Int     @id @db.SmallInt
+  ID_seance Int     @db.SmallInt
+  ID_viewer Int     @db.SmallInt
+  comm_text String? @db.Text
+  seance    seance  @relation(fields: [ID_seance], references: [ID_seance], onDelete: NoAction, onUpdate: NoAction, map: "comm_ibfk_1")
+  viewer    viewer  @relation(fields: [ID_viewer], references: [ID_viewer], onDelete: NoAction, onUpdate: NoAction, map: "comm_ibfk_2")
+
+  @@index([ID_seance], map: "R_13")
+  @@index([ID_viewer], map: "R_14")
+}
+
+model hall {
+  ID_hall               Int      @id @db.TinyInt
+  hall_type_of          Boolean
+  hall_address          String   @db.VarChar(50)
+  hall_additional_seats Int?     @db.TinyInt
+  seance                seance[]
+  seat                  seat[]
+}
+
+model hero {
+  ID_hero          Int           @id @db.SmallInt
+  ID_performance   Int           @db.SmallInt
+  hero_description String?       @db.Text
+  hero_name        String        @db.VarChar(20)
+  actors_hero      actors_hero[]
+  performance      performance   @relation(fields: [ID_performance], references: [ID_performance], onDelete: NoAction, onUpdate: NoAction, map: "hero_ibfk_1")
+
+  @@index([ID_performance], map: "R_12")
+}
+
+model performance {
+  ID_performance         Int       @id @db.SmallInt
+  ID_regisseur           Int       @db.SmallInt
+  performance_name       String    @db.VarChar(30)
+  performance_annotation String?   @db.Text
+  performance_type_of    Boolean
+  hero                   hero[]
+  regisseur              regisseur @relation(fields: [ID_regisseur], references: [ID_regisseur], onDelete: NoAction, onUpdate: NoAction, map: "performance_ibfk_1")
+  seance                 seance[]
+
+  @@index([ID_regisseur], map: "R_8")
+}
+
+model regisseur {
+  ID_regisseur        Int           @id @db.SmallInt
+  regisseur_full_name String?       @db.VarChar(50)
+  regisseur_text      String?       @db.Text
+  performance         performance[]
+}
+
+model seance {
+  ID_seance      Int         @id @db.SmallInt
+  ID_performance Int         @db.SmallInt
+  seance_time    DateTime?   @db.Time(0)
+  seance_date    DateTime    @db.Date
+  ID_hall        Int         @db.TinyInt
+  comm           comm[]
+  performance    performance @relation(fields: [ID_performance], references: [ID_performance], onDelete: NoAction, onUpdate: NoAction, map: "seance_ibfk_1")
+  hall           hall        @relation(fields: [ID_hall], references: [ID_hall], onDelete: NoAction, onUpdate: NoAction, map: "seance_ibfk_2")
+  ticket         ticket[]
+
+  @@index([ID_hall], map: "R_24")
+  @@index([ID_performance], map: "R_7")
+}
+
+model seat {
+  ID_key_seat    Int              @id @db.SmallInt
+  ID_seat        Int?             @db.TinyInt
+  seat_status_of Int              @db.TinyInt
+  ID_hall        Int              @db.TinyInt
+  ID_row         Int?             @db.TinyInt
+  ID_sector      Int?             @db.TinyInt
+  hall           hall             @relation(fields: [ID_hall], references: [ID_hall], onDelete: NoAction, onUpdate: NoAction, map: "seat_ibfk_1")
+  seat_by_ticket seat_by_ticket[]
+
+  @@index([ID_hall], map: "R_25")
+}
+
+model seat_by_ticket {
+  ID_ticket   Int    @db.SmallInt
+  ID_key_seat Int    @db.SmallInt
+  ticket      ticket @relation(fields: [ID_ticket], references: [ID_ticket], onDelete: NoAction, onUpdate: NoAction, map: "seat_by_ticket_ibfk_1")
+  seat        seat   @relation(fields: [ID_key_seat], references: [ID_key_seat], onDelete: NoAction, onUpdate: NoAction, map: "seat_by_ticket_ibfk_2")
+
+  @@id([ID_ticket, ID_key_seat])
+  @@index([ID_key_seat], map: "R_27")
+}
+
+model ticket {
+  ID_seance      Int              @db.SmallInt
+  ID_viewer      Int              @db.SmallInt
+  ID_ticket      Int              @id @db.SmallInt
+  seat_by_ticket seat_by_ticket[]
+  seance         seance           @relation(fields: [ID_seance], references: [ID_seance], onDelete: NoAction, onUpdate: NoAction, map: "ticket_ibfk_1")
+  viewer         viewer           @relation(fields: [ID_viewer], references: [ID_viewer], onDelete: NoAction, onUpdate: NoAction, map: "ticket_ibfk_2")
+
+  @@index([ID_seance], map: "R_2")
+  @@index([ID_viewer], map: "R_3")
+}
+
+model viewer {
+  ID_viewer        Int      @id @db.SmallInt
+  viewer_login     String   @db.VarChar(20)
+  viewer_password  String   @db.VarChar(20)
+  viewer_email     String?  @db.VarChar(30)
+  viewer_full_name String?  @db.VarChar(50)
+  comm             comm[]
+  ticket           ticket[]
+}
